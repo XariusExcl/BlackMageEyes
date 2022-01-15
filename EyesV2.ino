@@ -17,6 +17,9 @@
 #define PIN_TOP    6
 #define PIN_BOTTOM 4
 
+// If you do not have a controller yet, set this to 1.
+#define TEST_MODE 0
+
 Adafruit_NeoPixel eyesArray = Adafruit_NeoPixel(PIXEL_SUM, DATA_PIN);
 
 // Colors
@@ -253,39 +256,39 @@ void loop()
   top = !digitalRead(PIN_TOP);
   bot = !digitalRead(PIN_BOTTOM);
 
-  // Controller : Maps button combinaisons to a number, for easier emote selection
-  selectedEmot = (up*1)+(left*5)+(down*9)+(right*13); 
-  if (selectedEmot){
-    selectedEmot += (top*1)+(bot*2);
-  }
-
-  // Brightness control;
-  if (up && down)
-  {
-    selectedEmot = 0;
-    if (top && brightness < 5)
-    {
-      brightness += 1;
-      while (top){
-        top = !digitalRead(PIN_TOP);
-      };
-    } else if (bot && brightness > 1)
-    {
-      brightness -= 1;
-      while (bot){
-        bot = !digitalRead(PIN_BOTTOM);
-      };
+  #if TEST_MODE
+    // Test to cycle through emotions without a controller
+    selectedEmot++;
+    selectedEmot %= 17;
+    delay(1000);
+  #else
+    // Controller : Maps button combinaisons to a number, for easier emote selection
+    selectedEmot = (up*1)+(left*5)+(down*9)+(right*13); 
+    if (selectedEmot){
+      selectedEmot += (top*1)+(bot*2);
     }
-    delay(50); // Button debounce
-    displayedEmot = -1;
-  }
-  
-  // Test to cycle through emotions without a controller
-  /*
-  selectedEmot++;
-  selectedEmot %= 17;
-  delay(1000);
-  */
+
+    // Brightness control;
+    if (up && down)
+    {
+      selectedEmot = 0;
+      if (top && brightness < 5)
+      {
+        brightness += 1;
+        while (top){
+          top = !digitalRead(PIN_TOP);
+        };
+      } else if (bot && brightness > 1)
+      {
+        brightness -= 1;
+        while (bot){
+          bot = !digitalRead(PIN_BOTTOM);
+        };
+      }
+      delay(50); // Button debounce
+      displayedEmot = -1;
+    }
+  #endif
   
   if (selectedEmot != displayedEmot){
     switch(selectedEmot){
@@ -357,6 +360,7 @@ void DrawEyes(const byte emotion[7][10])
         continue;
       }
 
+      // Read cells in order
       if (i < 5 == 0){
         eyesArray.setPixelColor(k, COL_PALETTE[pgm_read_byte(&emotion[j][9 - i])] * brightness);
       } else { 
