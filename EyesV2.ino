@@ -48,7 +48,7 @@ const uint32_t COL_PALETTE[6] = {COL_BLACK, COL_YELLOW, COL_RED, COL_BLUE, COL_P
 // Emotions (values in the "corners" are unused.)
 // Pro tip : Use Ctrl + F to visualize the emotions!
 
-const byte EM_NORMAL[7][10] PROGMEM  = {
+const byte EM_NORMAL[7][10] PROGMEM = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0},
   {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
   {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -58,7 +58,7 @@ const byte EM_NORMAL[7][10] PROGMEM  = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_SKEPTICAL[7][10] PROGMEM  = {
+const byte EM_SKEPTICAL[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 1, 1, 1, 0},
   {0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
   {0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
@@ -68,7 +68,7 @@ const byte EM_SKEPTICAL[7][10] PROGMEM  = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_SUSPICIOUS[7][10] PROGMEM  = {
+const byte EM_SUSPICIOUS[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {1, 1, 1, 1, 0, 0, 1, 1, 1, 1},
@@ -78,7 +78,7 @@ const byte EM_SUSPICIOUS[7][10] PROGMEM  = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 
-const byte EM_ANGRY[7][10] PROGMEM  = {
+const byte EM_ANGRY[7][10] PROGMEM = {
   {0, 1, 0, 0, 0, 0, 0, 0, 1, 0},
   {1, 1, 1, 0, 0, 0, 0, 1, 1, 1},
   {1, 1, 1, 1, 0, 0, 1, 1, 1, 1},
@@ -88,7 +88,7 @@ const byte EM_ANGRY[7][10] PROGMEM  = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_VERYANGRY[7][10] PROGMEM  = {
+const byte EM_VERYANGRY[7][10] PROGMEM = {
   {0, 2, 0, 0, 0, 0, 0, 0, 2, 0},
   {2, 2, 2, 0, 0, 0, 0, 2, 2, 2},
   {2, 2, 2, 2, 0, 0, 2, 2, 2, 2},
@@ -98,7 +98,7 @@ const byte EM_VERYANGRY[7][10] PROGMEM  = {
   {0, 0, 2, 2, 0, 0, 2, 2, 0, 0}
 };
 
-const byte EM_SAD[7][10] PROGMEM  = {
+const byte EM_SAD[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
   {0, 0, 1, 1, 1, 1, 1, 1, 0, 0},
@@ -108,7 +108,7 @@ const byte EM_SAD[7][10] PROGMEM  = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_CRY[7][10] PROGMEM  = {
+const byte EM_CRY[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
   {0, 0, 1, 1, 1, 1, 1, 1, 0, 0},
@@ -118,7 +118,7 @@ const byte EM_CRY[7][10] PROGMEM  = {
   {0, 3, 3, 3, 0, 0, 3, 3, 3, 0}
 };
 
-const byte EM_DISAPPOINTED[7][10] PROGMEM  = {
+const byte EM_DISAPPOINTED[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -128,7 +128,7 @@ const byte EM_DISAPPOINTED[7][10] PROGMEM  = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_BLINK[7][10] PROGMEM  = {
+const byte EM_BLINK[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -138,7 +138,7 @@ const byte EM_BLINK[7][10] PROGMEM  = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 
-const byte EM_SURPRISE[7][10] PROGMEM  = {
+const byte EM_SURPRISE[7][10] PROGMEM = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0},
   {1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
   {1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
@@ -148,7 +148,7 @@ const byte EM_SURPRISE[7][10] PROGMEM  = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_KAWAII[7][10] PROGMEM  = {
+const byte EM_KAWAII[7][10] PROGMEM = {
   {0, 1, 0, 0, 0, 0, 0, 0, 1, 0},
   {0, 0, 1, 0, 0, 0, 0, 1, 0, 0},
   {0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
@@ -158,7 +158,7 @@ const byte EM_KAWAII[7][10] PROGMEM  = {
   {0, 1, 0, 0, 0, 0, 0, 0, 1, 0}
 };
 
-const byte EM_DEAD[7][10] PROGMEM  = {
+const byte EM_DEAD[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
   {0, 1, 0, 1, 0, 0, 1, 0, 1, 0},
@@ -168,7 +168,7 @@ const byte EM_DEAD[7][10] PROGMEM  = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 
-const byte EM_UU[7][10] PROGMEM  = {
+const byte EM_UU[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -178,7 +178,7 @@ const byte EM_UU[7][10] PROGMEM  = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_HAPPY[7][10] PROGMEM  = {
+const byte EM_HAPPY[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0},
@@ -188,7 +188,7 @@ const byte EM_HAPPY[7][10] PROGMEM  = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 
-const byte EM_WINK[7][10] PROGMEM  = {
+const byte EM_WINK[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 1, 1, 1, 0},
   {0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
   {0, 1, 1, 1, 0, 1, 1, 1, 1, 1},
@@ -198,7 +198,7 @@ const byte EM_WINK[7][10] PROGMEM  = {
   {0, 0, 0, 0, 0, 0, 1, 1, 1, 0}
 };
 
-const byte EM_HEARTS[7][10] PROGMEM  = {
+const byte EM_HEARTS[7][10] PROGMEM = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   {0, 4, 0, 4, 0, 0, 4, 0, 4, 0},
   {4, 4, 4, 4, 4, 4, 4, 4, 4, 4},
@@ -208,7 +208,7 @@ const byte EM_HEARTS[7][10] PROGMEM  = {
   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 
-const byte EM_HAPPIER[7][10] PROGMEM  = {
+const byte EM_HAPPIER[7][10] PROGMEM = {
   {0, 1, 1, 1, 0, 0, 1, 1, 1, 0},
   {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
   {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -286,7 +286,6 @@ void loop()
   selectedEmot %= 17;
   delay(1000);
   */
-  
   
   if (selectedEmot != displayedEmot){
     switch(selectedEmot){
