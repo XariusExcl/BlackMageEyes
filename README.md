@@ -1,5 +1,7 @@
 # Black Mage Eyes
 
+![Alt Text](https://i.giphy.com/media/DM3IzQmJNjZ6XTDtMu/giphy.webp)
+
 This is a rewrite of Duke of Dummies' [Black Mage Eyes](https://github.com/dukeofdummies/BlackMageEyes), who's tutorials heavily helped me create my own mask. Thank you!
 
 **Warning:** Code is NOT a drop-in replacement, however it is easy:tm: for you to configure for your own setup.
