@@ -99,16 +99,16 @@ Each number corresponds to a color defined in `COL_PALETTE`.
 ```cpp
 const uint32_t COL_PALETTE[6] = {COL_BLACK, COL_YELLOW, COL_RED, COL_BLUE, COL_PINK, COL_WHITE};
 ```
-Here is the default emotion, as an example (made entirely out of black and yellow):
-```cpp
-const byte EM_NORMAL[7][10] PROGMEM = {
-  {0, 1, 1, 1, 0, 0, 1, 1, 1, 0},
-  {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-  {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-  {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-  {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-  {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 
-  {0, 1, 1, 1, 0, 0, 1, 1, 1, 0}
+Here is an emotion and it's result :
+```
+const byte EM_CRY[7][10] PROGMEM = {
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},    =>  ⚫⚫⚫⚫⚫    ⚫⚫⚫⚫⚫
+   {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},    =>  ⚫⚫⚫⚫🟡    🟡⚫⚫⚫⚫
+   {0, 0, 1, 1, 1, 1, 1, 1, 0, 0},    =>  ⚫⚫🟡🟡🟡    🟡🟡🟡⚫⚫
+   {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},    =>  🟡🟡🟡🟡🟡    🟡🟡🟡🟡🟡
+   {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},    =>  🟡🟡🟡🟡🟡    🟡🟡🟡🟡🟡
+   {3, 3, 1, 3, 3, 3, 3, 1, 3, 3},    =>  🔵🔵🟡🔵🔵    🔵🔵🟡🔵🔵
+   {0, 3, 3, 3, 0, 0, 3, 3, 3, 0}     =>  ⚫🔵🔵🔵⚫    ⚫🔵🔵🔵⚫
 };
 ```
 If you wish to add colors, create a new color using `eyesArray.Color()`, specifying 3 values ranging from 0-255 (However, the total of the 3 numbers should be close to 3 or 4), then add it to the `COL_PALETTE`, changing it's size to the number of colors in it.
