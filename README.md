@@ -2,14 +2,14 @@
 
 ![Alt Text](https://i.giphy.com/media/DM3IzQmJNjZ6XTDtMu/giphy.webp)
 
-This is a rewrite of Duke of Dummies' [Black Mage Eyes](https://github.com/dukeofdummies/BlackMageEyes), who's tutorials heavily helped me create my own mask. Thank you!
+This is a rewrite of Duke of Dummies' [Black Mage Eyes](https://github.com/dukeofdummies/BlackMageEyes), whose tutorials heavily helped me create my own mask. Thank you!
 
 **Warning:** Code is NOT a drop-in replacement, however it is easy:tm: for you to configure for your own setup.
 
 ## Features
-**Selecting emotions:** Using a 4+2 button controller, you can select up to 16 emotions (+1 for the idle/nothing pressed state). Press the TOP and/or BOT buttons to select a bank of emotions, then one of the 4 directional buttons to display it!
+- **Selecting emotions:** Using a 4+2 button controller, you can select up to 16 emotions (+1 for the idle/nothing pressed state). The TOP and/or BOT buttons serve as a bank switch, giving you 4 banks of 4 possible emotions (TOP + 4 directions, BOT + 4 directions, TOP+BOT + 4 directions and nothing + 4 directions)
 
-**Brightness control:** Press the UP and DOWN buttons simultaneously, and change the brightness between 5 levels using the TOP and BOT buttons.
+- **Brightness control:** Press the UP and DOWN buttons simultaneously, and change the brightness between 5 levels using the TOP and BOT buttons.
 
 ## Configuration
 Everything you will need to configure is at the start of the file: The LED strip's data pin as well as the pins for your controller.
@@ -30,13 +30,13 @@ Everything you will need to configure is at the start of the file: The LED strip
 ```
 
 ## Testing
-If you do not have a controller yet, set the value of `TEST_MODE` to `1`. This will cycle through all the emotions.
+If you do not have a controller yet, set the value of `TEST_MODE` to `1`. This will cycle through all the emotions for testing.
 ```cpp
 #define TEST_MODE 0
 ```
 
 ## Changing keybinds
-For this, you will need to scroll down to the switch case part of the code, situated at around line 300. Just replace the name of the desired emotion corresponding to the key combination.
+Keybinds are set in a switch statement situated at around line 300. Just replace the name of the emotion inside `DrawEyes()` to the desired key combination.
 ```cpp
 switch(selectedEmot){
   case 0: // Nothing
@@ -95,11 +95,11 @@ switch(selectedEmot){
 
 ## Adding/Modifying emotions (advanced)
 Emotions are stored as 2-dimensional arrays, corresponding to what the LEDs will display when viewed from the front (values in the "corners" are ignored).
-Each number corresponds to a color defined in `COL_PALETTE`.
+Each number corresponds to a color defined in `COL_PALETTE` (starting at 0, of course).
 ```cpp
 const uint32_t COL_PALETTE[6] = {COL_BLACK, COL_YELLOW, COL_RED, COL_BLUE, COL_PINK, COL_WHITE};
 ```
-Here is an emotion and it's result :
+Here's an emotion and it's result:
 ```
 const byte EM_CRY[7][10] PROGMEM = {
    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},    =>  ⚫⚫⚫⚫⚫    ⚫⚫⚫⚫⚫
@@ -111,7 +111,7 @@ const byte EM_CRY[7][10] PROGMEM = {
    {0, 3, 3, 3, 0, 0, 3, 3, 3, 0}     =>  ⚫🔵🔵🔵⚫    ⚫🔵🔵🔵⚫
 };
 ```
-If you wish to add colors, create a new color using `eyesArray.Color()`, specifying 3 values ranging from 0-255 (However, the total of the 3 numbers should be close to 3 or 4), then add it to the `COL_PALETTE`, changing it's size to the number of colors in it.
+If you wish to add colors, create a new color using `eyesArray.Color()`, specifying 3 values ranging from 0-255 (However, try to make the sum of the 3 numbers close to 3 or 4), then add it to the `COL_PALETTE`, changing it's size to the number of colors in it.
 ```cpp
 const uint32_t COL_TURQUOISE = eyesArray.Color(0, 2, 2);
 ```
@@ -136,4 +136,9 @@ If your headset's LEDs are not laid out like mine, you will need to edit the `Dr
  *           56 49 42         19 12 5
  */
 ```
-I'm afraid to explain this and confuse you more than anything, just keep in mind that this method reads the 2-dimentionnal Emotion array according to the schema above (first cell read is 0, second cell read is 1...).
+I'm afraid to explain this and confuse you more than anything, just keep in mind that this method reads the 2-dimentionnal Emotion array according to the schema above:
+- First cell read is the one anotated 0, which would be `EM_EMOTION[6][8]`
+- Second one would be 1 => `EM_EMOTION[5][8]`
+...
+- Cell 6 would be `EM_EMOTION[6][7]`
+etc...
